@@ -15,8 +15,8 @@ An AI-assisted kiosk and POS system for Panda Express that integrates real-time 
 - Secure payment processing and login authentication
 
 ### Individual Contributions
-- Designed and implemented parts of the frontend layout and styling, focusing on user-friendly interfaces and accessibility across different views
-- Integrated dynamic logic to reflect user choices in real time, including automatic stock and order updates
+- Designed and implemented parts of the frontend layout and styling, focusing on user-friendly interfaces and accessibility across views
+- Integrated dynamic logic to reflect user choices in real time, inlcuding automatic stock updates
 - Developed parts of the backend, including creating and storing item data for the menu
 - Implemented parts of manager view reports, providing insights on sales and inventory
 
