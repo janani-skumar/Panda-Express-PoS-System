@@ -1,0 +1,6 @@
+{
+  "server": "http://localhost:3000",
+  "waitBeforeScreenShot": 1500,
+  "outputDir": "public/docs/manual"
+}
+

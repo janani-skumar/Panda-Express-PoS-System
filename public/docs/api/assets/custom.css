@@ -1,0 +1,78 @@
+/* Custom CSS for TypeDoc API Documentation */
+/* Panda Express Theme */
+
+:root {
+  --color-primary: #d42a1e;
+  --color-primary-dark: #a31f15;
+  --color-secondary: #ffc72c;
+  --color-background: #ffffff;
+  --color-background-secondary: #f5f5f5;
+  --color-text: #333333;
+  --color-text-aside: #666666;
+}
+
+/* Header styling */
+header {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%) !important;
+}
+
+header a {
+  color: white !important;
+}
+
+/* Navigation links */
+.tsd-navigation a {
+  color: var(--color-text);
+}
+
+.tsd-navigation a:hover {
+  color: var(--color-primary);
+}
+
+/* Active navigation item */
+.tsd-navigation .current > a {
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+/* Code blocks */
+pre, code {
+  background-color: var(--color-background-secondary);
+  border-radius: 4px;
+}
+
+/* Buttons and links */
+a {
+  color: var(--color-primary);
+}
+
+a:hover {
+  color: var(--color-primary-dark);
+}
+
+/* Search box */
+#tsd-search input {
+  border: 2px solid var(--color-secondary);
+}
+
+#tsd-search input:focus {
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+/* Module/class headers */
+.tsd-page-title h1 {
+  color: var(--color-primary);
+}
+
+/* Badges */
+.tsd-kind-icon::before {
+  background-color: var(--color-primary);
+}
+
+/* Footer */
+footer {
+  background-color: var(--color-background-secondary);
+  border-top: 2px solid var(--color-secondary);
+}
+

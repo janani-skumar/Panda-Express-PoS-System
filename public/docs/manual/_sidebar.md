@@ -1,0 +1,14 @@
+-   [Home](/)
+-   **Getting Started**
+    -   [Overview](cover.md)
+-   **Customer Ordering**
+    -   [Overview](1-Customer%20Ordering/1-Overview.md)
+-   **Cashier Operations**
+    -   [Overview](2-Cashier%20Operations/1-Overview.md)
+-   **Kitchen Display**
+    -   [Overview](3-Kitchen%20Display/1-Overview.md)
+-   **Manager Dashboard**
+    -   [Overview](4-Manager%20Dashboard/1-Overview.md)
+-   **Resources**
+    -   [API Documentation](https://project-3-team-41-zbyt.onrender.com/docs/api/index.html)
+    -   [Back to Docs Hub](/docs)

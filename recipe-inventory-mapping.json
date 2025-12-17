@@ -1,0 +1,172 @@
+{
+    "recipes": {
+        "entrees": {
+            "Black Pepper Sirloin Steak": [
+                "Beef",
+                "Black Pepper Sauce",
+                "Bell Peppers",
+                "Onions",
+                "Garlic",
+                "Cooking Oil",
+                "White Rice"
+            ],
+            "Crispy Sesame Shrimp & Beef": [
+                "Shrimp",
+                "Beef",
+                "Honey Sesame Sauce",
+                "Sesame Seeds",
+                "Flour",
+                "Cooking Oil",
+                "Bell Peppers",
+                "Onions",
+                "White Rice"
+            ],
+            "Broccoli Beef": [
+                "Beef",
+                "Broccoli",
+                "Garlic",
+                "Ginger",
+                "Cooking Oil",
+                "White Rice"
+            ],
+            "Beijing Beef": [
+                "Beef",
+                "Bell Peppers",
+                "Onions",
+                "Garlic",
+                "Cooking Oil",
+                "White Rice"
+            ],
+            "Grilled Teriyaki Chicken": [
+                "Chicken Breast",
+                "Teriyaki Sauce",
+                "Garlic",
+                "Ginger",
+                "Cooking Oil",
+                "White Rice"
+            ],
+            "The Original Orange Chicken": [
+                "Chicken Breast",
+                "Orange Sauce",
+                "Flour",
+                "Cooking Oil",
+                "White Rice"
+            ],
+            "Honey Sesame Chicken": [
+                "Chicken Breast",
+                "Honey Sesame Sauce",
+                "Sesame Seeds",
+                "Flour",
+                "Cooking Oil",
+                "White Rice"
+            ],
+            "String Bean Chicken Breast": [
+                "Chicken Breast",
+                "String Beans",
+                "Garlic",
+                "Ginger",
+                "Cooking Oil",
+                "White Rice"
+            ],
+            "Kung Pao Chicken": [
+                "Chicken Breast",
+                "Kung Pao Sauce",
+                "Bell Peppers",
+                "Onions",
+                "Garlic",
+                "Cooking Oil",
+                "White Rice"
+            ],
+            "Mushroom Chicken": [
+                "Chicken Breast",
+                "Mushrooms",
+                "Garlic",
+                "Ginger",
+                "Cooking Oil",
+                "White Rice"
+            ],
+            "Honey Walnut Shrimp": [
+                "Shrimp",
+                "Honey Sesame Sauce",
+                "Walnuts",
+                "Flour",
+                "Cooking Oil",
+                "White Rice"
+            ],
+            "Black Pepper Chicken": [
+                "Chicken Breast",
+                "Black Pepper Sauce",
+                "Bell Peppers",
+                "Onions",
+                "Garlic",
+                "Cooking Oil",
+                "White Rice"
+            ]
+        },
+        "sides": {
+            "White Steamed Rice": ["White Rice"],
+            "Fried Rice": [
+                "White Rice",
+                "Carrots",
+                "Onions",
+                "Cooking Oil",
+                "Garlic"
+            ],
+            "Chow Mein": [
+                "Chow Mein Noodles",
+                "Carrots",
+                "Onions",
+                "Bell Peppers",
+                "Cooking Oil",
+                "Garlic"
+            ],
+            "Super Greens": [
+                "Mixed Greens",
+                "Broccoli",
+                "Garlic",
+                "Cooking Oil"
+            ]
+        },
+        "appetizers": {
+            "Veggie Spring Roll": [
+                "Spring Roll Wrappers",
+                "Carrots",
+                "Cabbage (if separate, otherwise Mixed Greens)",
+                "Cooking Oil"
+            ],
+            "Chicken Egg Roll": [
+                "Egg Roll Wrappers",
+                "Chicken Breast",
+                "Carrots",
+                "Cabbage (if separate, otherwise Mixed Greens)",
+                "Cooking Oil"
+            ],
+            "Cream Cheese Rangoon": [
+                "Wonton Wrappers",
+                "Cream Cheese",
+                "Cooking Oil"
+            ]
+        },
+        "drinks": {
+            "Dr Pepper": ["Cups", "Lids", "Straws", "Ice"],
+            "Sweet Tea": ["Cups", "Lids", "Straws", "Ice"],
+            "Pepsi": ["Cups", "Lids", "Straws", "Ice"],
+            "Diet Pepsi": ["Cups", "Lids", "Straws", "Ice"],
+            "Mountain Dew": ["Cups", "Lids", "Straws", "Ice"],
+            "Lipton Brisk Raspberry Iced Tea": [
+                "Cups",
+                "Lids",
+                "Straws",
+                "Ice"
+            ],
+            "Tropicana Lemonade": ["Cups", "Lids", "Straws", "Ice"],
+            "Aquafina": ["Cups", "Lids", "Straws", "Ice"],
+            "Gatorade Lemon Lime": ["Cups", "Lids", "Straws", "Ice"]
+        }
+    },
+    "notes": {
+        "cabbage": "If cabbage is needed separately from Mixed Greens, you may want to add it as a separate inventory item. Currently, Mixed Greens may cover this need.",
+        "sauces": "Some recipes may use multiple sauces or sauce combinations. Adjust quantities in junction table accordingly.",
+        "base_ingredients": "Most entrees and sides will include White Rice as a serving base. Some recipes may require additional vegetables not listed if you want more specific ingredient breakdowns."
+    }
+}

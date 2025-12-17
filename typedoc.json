@@ -1,0 +1,51 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": [
+    "./app/api",
+    "./app/services",
+    "./app/components",
+    "./app/providers",
+    "./lib",
+    "./hooks",
+    "./drizzle/src",
+    "./drizzle/migrations"
+  ],
+  "entryPointStrategy": "expand",
+  "out": "./public/docs/api",
+  "name": "Panda Express PoS - API Documentation",
+  "readme": "./README.md",
+  "excludePrivate": true,
+  "excludeProtected": false,
+  "excludeInternal": true,
+  "includeVersion": true,
+  "categorizeByGroup": true,
+  "navigationLinks": {
+    "Home": "https://project-3-team-41-zbyt.onrender.com/",
+    "Docs": "https://project-3-team-41-zbyt.onrender.com/docs",
+    "Manual": "https://project-3-team-41-zbyt.onrender.com/docs/manual/index.html#/"
+  },
+  "customCss": "./public/docs/api-custom.css",
+  "theme": "default",
+  "sort": ["source-order", "alphabetical"],
+  "kindSortOrder": [
+    "Module",
+    "Namespace",
+    "Class",
+    "Interface",
+    "TypeAlias",
+    "Function",
+    "Variable"
+  ],
+  "exclude": [
+    "**/node_modules/**",
+    "**/*.test.ts",
+    "**/*.spec.ts"
+  ],
+  "skipErrorChecking": true,
+  "validation": {
+    "notExported": false,
+    "invalidLink": false,
+    "notDocumented": false
+  }
+}
+

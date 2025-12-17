@@ -1,0 +1,95 @@
+
+-- CREATE TYPE "public"."recipe_type" AS ENUM('Side', 'Entree', 'Drink');--> statement-breakpoint
+-- CREATE TABLE "cooked" (
+-- 	"id" integer PRIMARY KEY NOT NULL,
+-- 	"recipe_id" integer NOT NULL,
+-- 	"current_stock" integer NOT NULL
+-- );
+-- --> statement-breakpoint
+-- CREATE TABLE "employees" (
+-- 	"name" text NOT NULL,
+-- 	"salary" real NOT NULL,
+-- 	"hours" integer NOT NULL,
+-- 	"password" text NOT NULL,
+-- 	"is_employed" boolean NOT NULL,
+-- 	"id" integer PRIMARY KEY NOT NULL,
+-- 	"role_id" integer NOT NULL,
+-- 	CONSTRAINT "employees_is_employed_check" CHECK (is_employed = ANY (ARRAY[true, false]))
+-- );
+-- --> statement-breakpoint
+-- CREATE TABLE "expenses" (
+-- 	"cost" real NOT NULL,
+-- 	"id" integer PRIMARY KEY NOT NULL,
+-- 	"item_id" integer NOT NULL,
+-- 	"expense_time" text NOT NULL
+-- );
+-- --> statement-breakpoint
+-- CREATE TABLE "inv_rec_junc" (
+-- 	"id" integer PRIMARY KEY NOT NULL,
+-- 	"inventory_id" integer NOT NULL,
+-- 	"recipe_id" integer NOT NULL,
+-- 	"inventory_quantity" integer NOT NULL
+-- );
+-- --> statement-breakpoint
+-- CREATE TABLE "inventory" (
+-- 	"name" text NOT NULL,
+-- 	"id" integer PRIMARY KEY NOT NULL,
+-- 	"batch_purchase_cost" real NOT NULL,
+-- 	"current_stock" integer NOT NULL,
+-- 	"estimated_used_per_day" integer NOT NULL
+-- );
+-- --> statement-breakpoint
+-- CREATE TABLE "meal_types" (
+-- 	"type_name" text PRIMARY KEY NOT NULL,
+-- 	"sides" integer NOT NULL,
+-- 	"entrees" integer NOT NULL,
+-- 	"drinks" integer NOT NULL,
+-- 	"price" real NOT NULL,
+-- 	"image_file_path" text
+-- );
+-- --> statement-breakpoint
+-- CREATE TABLE "orders" (
+-- 	"tax" real NOT NULL,
+-- 	"total_cost" real NOT NULL,
+-- 	"id" integer PRIMARY KEY NOT NULL,
+-- 	"order_time" text NOT NULL,
+-- 	"cashier_id" integer NOT NULL,
+-- 	"is_completed" boolean NOT NULL,
+-- 	"order_info" jsonb
+-- );
+-- --> statement-breakpoint
+-- CREATE TABLE "rec_order_junc" (
+-- 	"quantity" integer NOT NULL,
+-- 	"id" integer PRIMARY KEY NOT NULL,
+-- 	"recipe_id" integer NOT NULL,
+-- 	"order_id" integer NOT NULL
+-- );
+-- --> statement-breakpoint
+-- CREATE TABLE "recipes" (
+-- 	"name" text NOT NULL,
+-- 	"image" text,
+-- 	"id" integer PRIMARY KEY NOT NULL,
+-- 	"price_per_serving" real NOT NULL,
+-- 	"orders_per_batch" integer NOT NULL,
+-- 	"type" "recipe_type"
+-- );
+-- --> statement-breakpoint
+-- CREATE TABLE "roles" (
+-- 	"name" text NOT NULL,
+-- 	"can_discount" boolean NOT NULL,
+-- 	"can_restock" boolean NOT NULL,
+-- 	"id" integer PRIMARY KEY NOT NULL,
+-- 	"can_edit_employees" boolean NOT NULL,
+-- 	CONSTRAINT "roles_can_discount_check" CHECK (can_discount = ANY (ARRAY[true, false])),
+-- 	CONSTRAINT "roles_can_restock_check" CHECK (can_restock = ANY (ARRAY[true, false])),
+-- 	CONSTRAINT "roles_can_edit_employees_check" CHECK (can_edit_employees = ANY (ARRAY[true, false]))
+-- );
+-- --> statement-breakpoint
+-- ALTER TABLE "cooked" ADD CONSTRAINT "cooked_recipe_id_fkey" FOREIGN KEY ("recipe_id") REFERENCES "public"."recipes"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
+-- ALTER TABLE "employees" ADD CONSTRAINT "employees_role_id_fkey" FOREIGN KEY ("role_id") REFERENCES "public"."roles"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
+-- ALTER TABLE "expenses" ADD CONSTRAINT "expenses_item_id_fkey" FOREIGN KEY ("item_id") REFERENCES "public"."inventory"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
+-- ALTER TABLE "inv_rec_junc" ADD CONSTRAINT "inv_rec_junc_inventory_id_fkey" FOREIGN KEY ("inventory_id") REFERENCES "public"."inventory"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
+-- ALTER TABLE "inv_rec_junc" ADD CONSTRAINT "inv_rec_junc_recipe_id_fkey" FOREIGN KEY ("recipe_id") REFERENCES "public"."recipes"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
+-- ALTER TABLE "orders" ADD CONSTRAINT "orders_cashier_id_fkey" FOREIGN KEY ("cashier_id") REFERENCES "public"."employees"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
+-- ALTER TABLE "rec_order_junc" ADD CONSTRAINT "rec_order_junc_recipe_id_fkey" FOREIGN KEY ("recipe_id") REFERENCES "public"."recipes"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
+-- ALTER TABLE "rec_order_junc" ADD CONSTRAINT "rec_order_junc_order_id_fkey" FOREIGN KEY ("order_id") REFERENCES "public"."orders"("id") ON DELETE no action ON UPDATE no action;

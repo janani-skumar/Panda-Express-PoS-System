@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Panda Express PoS - User Manual</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="User manual for Panda Express Point of Sale System">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="icon" href="/Panda Express/round_logo.png" />
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <style>
+    :root {
+      --theme-color: #d42a1e;
+      --theme-color-dark: #a31f15;
+      --sidebar-width: 280px;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .app-name-link {
+      color: var(--theme-color) !important;
+    }
+
+    .sidebar-nav a {
+      color: #333;
+    }
+
+    .sidebar-nav a:hover,
+    .sidebar-nav a.active {
+      color: var(--theme-color);
+    }
+
+    .markdown-section h1 {
+      color: var(--theme-color);
+      border-bottom: 2px solid #ffc72c;
+      padding-bottom: 10px;
+    }
+
+    .markdown-section h2 {
+      color: var(--theme-color-dark);
+    }
+
+    .markdown-section a {
+      color: var(--theme-color);
+    }
+
+    .markdown-section a:hover {
+      color: var(--theme-color-dark);
+      text-decoration: underline;
+    }
+
+    .cover {
+      background: linear-gradient(135deg, #d42a1e 0%, #a31f15 100%) !important;
+    }
+
+    .cover .cover-main {
+      color: white;
+    }
+
+    .cover a {
+      color: #ffc72c !important;
+    }
+
+    .cover a:hover {
+      color: white !important;
+    }
+
+    /* Screenshot images */
+    .markdown-section img {
+      border: 2px solid #eee;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      margin: 20px 0;
+    }
+
+    /* Back to docs link */
+    .back-to-docs {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--theme-color);
+      color: white !important;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(212, 42, 30, 0.3);
+      transition: all 0.2s;
+      z-index: 1000;
+    }
+
+    .back-to-docs:hover {
+      background: var(--theme-color-dark);
+      transform: translateY(-2px);
+    }
+
+    /* Code blocks */
+    .markdown-section pre {
+      background: #f5f5f5;
+      border-left: 4px solid var(--theme-color);
+    }
+
+    /* Note boxes */
+    .markdown-section blockquote {
+      border-left: 4px solid #ffc72c;
+      background: #fff9e6;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app"></div>
+  <a href="/docs" class="back-to-docs">← Back to Docs Hub</a>
+  <script>
+    // Clear old cache on load
+    if (localStorage) {
+      Object.keys(localStorage).forEach(function(key) {
+        if (key.startsWith('docsify')) {
+          localStorage.removeItem(key);
+        }
+      });
+    }
+
+    window.$docsify = {
+      name: 'Panda Express PoS',
+      repo: '',
+      loadSidebar: '_sidebar.md?v=' + Date.now(),
+      subMaxLevel: 3,
+      auto2top: true,
+      requestHeaders: {
+        'cache-control': 'no-cache'
+      },
+      search: {
+        maxAge: 0,
+        paths: 'auto',
+        placeholder: 'Search documentation...',
+        noData: 'No results found',
+        depth: 3
+      },
+      externalLinkTarget: '_self',
+      coverpage: true,
+      logo: '/Panda Express/round_logo.png',
+      plugins: [
+        function(hook, vm) {
+          hook.doneEach(function() {
+            // Handle clicks on API documentation links
+            document.querySelectorAll('a[href*="/docs/api"], a[href*="docs/api"]').forEach(function(link) {
+              link.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.location.href = '/docs/api/index.html';
+              });
+            });
+            // Handle clicks on Docs Hub links
+            document.querySelectorAll('a[href="/docs"], a[href*="#/docs"]').forEach(function(link) {
+              if (!link.href.includes('/docs/api') && !link.href.includes('/docs/manual')) {
+                link.addEventListener('click', function(e) {
+                  e.preventDefault();
+                  window.location.href = '/docs';
+                });
+              }
+            });
+          });
+        }
+      ]
+    }
+  </script>
+  <!-- Docsify v4 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <!-- Search plugin -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <!-- Zoom image -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+  <!-- Copy code -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+</body>
+
+</html>
